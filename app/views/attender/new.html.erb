@@ -1,0 +1,10 @@
+<%= form_for @attender, url: {action: "create"} do |f| %>
+<%= f.text_field :first_name%>
+<%= f.text_field :middle_name%>
+<%= f.text_field :last_name%>
+<%= f.text_field :name_on_certificate%>
+<%= f.text_field :email%>
+<%= f.text_field :phone_number%>
+<%= f.select :event_id, Event.all.collect do {|x| [x.name, x.id]}, {:include_blank => "Select the desired event"%>
+<%= f.submit "Submit" %>
+<% end %>

@@ -1,0 +1,6 @@
+<% @events.each do |event|%>
+	<div>
+	<h1><%= event.name%></h1> <small> <%=event.date%>
+	<p><%= event.description%> </p>
+	<%= link_to "Sign Up", new_attender_path %>
+<%end%>
