@@ -1,10 +1,17 @@
 <%= form_for @attender, url: {action: "create"} do |f| %>
-<%= f.text_field :first_name%>
-<%= f.text_field :middle_name%>
-<%= f.text_field :last_name%>
-<%= f.text_field :name_on_certificate%>
-<%= f.text_field :email%>
-<%= f.text_field :phone_number%>
-<%= f.select :event_id, Event.all.collect do {|x| [x.name, x.id]}, {:include_blank => "Select the desired event"%>
+<%= f.label :first_name%>
+<%= f.text_field :first_name%> </br>
+<%= f.label :middle_name%>
+<%= f.text_field :middle_name%> </br>
+<%= f.label :last_name%>
+<%= f.text_field :last_name%> </br>
+<%= f.label :name_on_certificate%>
+<%= f.text_field :name_on_certificate%> </br>
+<%= f.label :email%>
+<%= f.text_field :email%> </br>
+<%= f.label :phone_number , "Mobile number"%>
+<%= f.text_field :phone_number%> </br>
+<%= f.label :event_id , "Event"%>
+<%= f.select :event_id, Event.all.collect { |x| [x.name, x.id] } %> </br>
 <%= f.submit "Submit" %>
 <% end %>
